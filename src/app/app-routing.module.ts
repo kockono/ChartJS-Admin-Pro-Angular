@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// 404 Not found component
-import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
-
-// Modulos de rutas
+// Modulos
 import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthRoutingModule } from './auth/auth.routing';
 
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+
+
 const routes: Routes = [
-  // Tomara la primera ruta que cumple con el path vacio
+
+  // path: '/dashboard' PagesRouting
+  // path: '/auth' AuthRouting
+  // path: '/medicos' MedicosRouting
+  // path: '/compras' ComprasRouting
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', component: NopagefoundComponent },
-
 ];
 
 

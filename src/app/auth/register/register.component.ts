@@ -12,11 +12,4 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public contador:any;
-
-  /**
-   * @angular_13_1_1
-   *
-   */
-
 }

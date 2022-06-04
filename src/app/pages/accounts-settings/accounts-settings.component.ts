@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-accounts-settings',
@@ -10,37 +11,16 @@ import { DOCUMENT } from '@angular/common';
 export class AccountsSettingsComponent implements OnInit {
 
   public linkTheme = document.querySelector('#theme');
+  // const links:any = this._document.querySelectorAll('.selector'); ocupas el inject
 
-  public links!: NodeListOf<Element>;
-
-  constructor(@Inject(DOCUMENT) private _document) { }
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit(): void {
-    this.checkCurrentTheme();
+    this.settingsService.checkCurrentTheme();
   }
 
   changeTheme(theme:string) {
-    const url = `./assets/css/colors/${theme}.css`;
-    this.linkTheme.setAttribute('href', url); // Sustituye el url del href del index.html
-    localStorage.setItem('theme', url);
-  }
-
-  checkCurrentTheme(){
-    const linksClass2:any = document.querySelectorAll('.selector');
-    const links:any = this._document.querySelectorAll('.selector');
-
-    console.log( links );
-    console.log( linksClass2 );
-
-    links.forEach(element => {
-      element.classList.remove('working');
-    });
-
-    linksClass2.forEach(element => {
-      element.classList.remove('working');
-    });
-
+    this.settingsService.changeTheme(theme);
   }
 
 }
-

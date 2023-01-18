@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthRoutingModule } from './auth/auth.routing';
 
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { NopagefoundComponent } from './nopagenofound/nopagefound.component';
 
 
 const routes: Routes = [
